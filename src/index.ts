@@ -8,9 +8,6 @@ const bootstrap = async () => {
     const app    = createApp();
     const server = http.createServer(app);
 
-    const domain = await getServerDomain();
-    process.env.SERVER_DOMAIN = domain;
-
     server.on('upgrade', handleUpgrade);
 
     process.on('SIGTERM', () => server.close(() => process.exit(0)));
@@ -18,7 +15,12 @@ const bootstrap = async () => {
 
     server.listen(config.port, '0.0.0.0', () => {
         console.log(`[${config.nodeEnv}] Server running on port ${config.port}`);
-        console.log(`[domain] ${domain || 'unknown'}`);
+
+        setTimeout(async () => {
+            const domain = await getServerDomain();
+            process.env.SERVER_DOMAIN = domain;
+            console.log(`[domain] ${domain || 'unknown'}`);
+        }, 3000);
     });
 };
 

@@ -1,8 +1,8 @@
 import { WebSocketServer, WebSocket } from 'ws';
 import { IncomingMessage } from 'http';
 import { Socket } from 'net';
-import { StreamConnector } from '/Users/RupakBoral/code/teler-sdk-node/dist/lib/stream';
-import { StreamType }      from '/Users/RupakBoral/code/teler-sdk-node/dist/types';
+import { StreamConnector } from 'teler-sdk-node';
+import { StreamType }      from 'teler-sdk-node';
 import { callStreamHandler, remoteStreamHandler } from './streamHandlers';
 import { config } from '../core/config';
 
@@ -23,7 +23,7 @@ wss.on('connection', async (callWs: WebSocket) => {
 export const handleUpgrade = (request: IncomingMessage, socket: Socket, head: Buffer) => {
     if (request.url === '/media-stream') {
         wss.handleUpgrade(request, socket, head, (ws) => {
-            wss.emit('connection', ws, request);
+            wss.emit('connection', ws);
         });
     } else {
         socket.destroy();

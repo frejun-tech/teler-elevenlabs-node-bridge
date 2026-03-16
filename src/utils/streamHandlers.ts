@@ -1,4 +1,4 @@
-import { StreamHandlerResult, StreamOP, StreamType } from "/Users/RupakBoral/code/teler-sdk-node/dist/types";
+import { StreamHandlerResult, StreamOP } from "teler-sdk-node";
 
 export const callStreamHandler = async (message: string): Promise<StreamHandlerResult> => {
     try {
