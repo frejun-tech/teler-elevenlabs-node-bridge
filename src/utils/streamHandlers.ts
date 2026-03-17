@@ -1,4 +1,4 @@
-import { StreamHandlerResult, StreamOP } from "teler-sdk-node";
+import { StreamHandlerResult, StreamOP } from "@frejun/teler";
 
 export const callStreamHandler = async (message: string): Promise<StreamHandlerResult> => {
     try {

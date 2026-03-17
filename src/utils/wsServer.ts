@@ -1,8 +1,8 @@
 import { WebSocketServer, WebSocket } from 'ws';
 import { IncomingMessage } from 'http';
 import { Socket } from 'net';
-import { StreamConnector } from 'teler-sdk-node';
-import { StreamType }      from 'teler-sdk-node';
+import { StreamConnector } from '@frejun/teler';
+import { StreamType }      from '@frejun/teler';
 import { callStreamHandler, remoteStreamHandler } from './streamHandlers';
 import { config } from '../core/config';
 
