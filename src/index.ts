@@ -4,7 +4,7 @@ import { config } from './core/config';
 import { handleUpgrade } from './utils/wsServer';
 import { getServerDomain } from './utils/ngrokUtils';
 
-const bootstrap = async () => {
+const initServer = async () => {
     const app    = createApp();
     const server = http.createServer(app);
 
@@ -24,4 +24,4 @@ const bootstrap = async () => {
     });
 };
 
-bootstrap();
+initServer();

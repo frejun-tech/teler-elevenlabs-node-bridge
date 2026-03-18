@@ -6,7 +6,7 @@ export const callRouter = Router();
 
 export const getFlowUrl             = () => `https://${process.env.SERVER_DOMAIN}/api/v1/calls/flow`;
 export const getStatusCallbackUrl   = () => `https://${process.env.SERVER_DOMAIN}/api/v1/webhooks/receiver`;
-export const getMediaStreamURL      = () => `wss://${process.env.SERVER_DOMAIN}/media-stream`
+export const getMediaStreamURL      = () => `wss://${process.env.SERVER_DOMAIN}/api/v1/media-stream`
 
 callRouter.post('/initiate-call', async (req: Request, res: Response) => {
     try {

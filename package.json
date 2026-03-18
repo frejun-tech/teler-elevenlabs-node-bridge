@@ -1,5 +1,5 @@
 {
-  "name": "teler-11labs-node",
+  "name": "teler-elevenlabs-node",
   "version": "1.0.0",
   "license": "ISC",
   "type": "commonjs",
@@ -10,7 +10,7 @@
     "serve": "node dist/index.js"
   },
   "dependencies": {
-    "@frejun/teler": "^1.0.6",
+    "@frejun/teler": "^1.0.7",
     "axios": "^1.13.6",
     "dotenv": "^17.3.1",
     "express": "^5.2.1",

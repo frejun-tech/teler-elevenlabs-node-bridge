@@ -1,4 +1,5 @@
 import { Router, Request, Response } from 'express';
+
 export const webhookRouter = Router();
 
 webhookRouter.post('/receiver', (req: Request, res: Response) => {

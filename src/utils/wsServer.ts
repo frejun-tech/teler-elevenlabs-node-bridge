@@ -21,7 +21,7 @@ wss.on('connection', async (callWs: WebSocket) => {
 });
 
 export const handleUpgrade = (request: IncomingMessage, socket: Socket, head: Buffer) => {
-    if (request.url === '/media-stream') {
+    if (request.url === '/api/v1/media-stream') {
         wss.handleUpgrade(request, socket, head, (ws) => {
             wss.emit('connection', ws);
         });
