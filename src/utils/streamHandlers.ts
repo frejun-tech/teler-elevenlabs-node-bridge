@@ -1,8 +1,8 @@
-import { StreamHandlerResult, StreamOP } from "@frejun/teler";
+import { StreamData, StreamHandlerResult, StreamOP } from "@frejun/teler";
 
-export const callStreamHandler = async (message: string): Promise<StreamHandlerResult> => {
+export const callStreamHandler = async (message: StreamData): Promise<StreamHandlerResult> => {
     try {
-        const data = JSON.parse(message);
+        const data = JSON.parse(message.toString());
 
         if(data["type"] === "audio") {
             const payload: string = JSON.stringify({
@@ -21,9 +21,9 @@ export const callStreamHandler = async (message: string): Promise<StreamHandlerR
 export const remoteStreamHandler = () => {
     let chunk_id = 1
 
-    const handler = async(message: string): Promise<StreamHandlerResult> => {
+    const handler = async(message: StreamData): Promise<StreamHandlerResult> => {
         try {
-            const data = JSON.parse(message);
+            const data = JSON.parse(message.toString());
 
             if(data["type"] === "audio") {
                 const payload = JSON.stringify({

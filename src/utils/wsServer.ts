@@ -10,14 +10,14 @@ export const wss = new WebSocketServer({ noServer: true });
 
 const connector = new StreamConnector(
     config.elevenLabsWsUrl,
-    StreamType.BIDIRECTIONAL,
     callStreamHandler,
-    remoteStreamHandler()
+    remoteStreamHandler(),
+    StreamType.BIDIRECTIONAL
 );
 
 wss.on('connection', async (callWs: WebSocket) => {
     console.log('Teler connected to WebSocket');
-    await connector.bridgeStream(callWs as any);
+    await connector.bridgeStream(callWs);
 });
 
 export const handleUpgrade = (request: IncomingMessage, socket: Socket, head: Buffer) => {

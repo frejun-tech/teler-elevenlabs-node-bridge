@@ -4,7 +4,7 @@ A reference integration between Teler and Elevenlabs in Node, based on [Media St
 
 ## What is Teler?
 
-Teler is a programmable voice API by FreJun. It handles carriers, phone numbers, and real-time audio streaming so you can connect AI models directly to phone calls. → [frejun.ai](https://frejun.ai)
+Teler is a programmable voice API by FreJun. It handles carriers, phone numbers, and real-time audio streaming so you can connect AI models directly to phone calls. → [Teler](https://frejun.com/teler/)
 
 
 ## Setup
